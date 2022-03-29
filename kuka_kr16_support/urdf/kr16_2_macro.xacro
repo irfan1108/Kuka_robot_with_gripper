@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="kuka_kr16_2" params="prefix">
+    <!-- LINKS -->
+    
+    <!-- World link -->
+    <link name="${prefix}world"/>
+    
+    <!-- base link -->
+    <link name="${prefix}base_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/base_link.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/base_link.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 1 (A1) -->
+    <link name="${prefix}link_1">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_1.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_1.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 2 -->
+    <link name="${prefix}link_2">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_2.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_2.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 3 -->
+    <link name="${prefix}link_3">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_3.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_3.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 4 -->
+    <link name="${prefix}link_4">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_4.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_4.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 5 -->
+    <link name="${prefix}link_5">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_5.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_5.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- link 6 -->
+    <link name="${prefix}link_6">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="2"/>
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/visual/link_6.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/collision/link_6.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- END LINKS -->
+
+    <!-- Robot_gripper -->
+    <link name="${prefix}gripper_head">
+      <inertial>
+        <origin xyz="0.00323055318421452 0.00571269700091375 0.00847802343130645" rpy="0 0 0" />
+        <mass value="0.000248817240273109" />
+        <inertia ixx="1.24533619200803E-09" ixy="3.98193864519775E-14" ixz="-4.71443407373705E-13" iyy="1.85586084685055E-09" iyz="4.91941940817118E-11" izz="1.72781442655061E-09" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/gripper_head.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/gripper_head.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="${prefix}left_gripper_link">
+      <inertial>
+        <origin xyz="0.00257506972135058 2.01670223389577E-05 0.0106733481729336" rpy="0 0 0" />
+        <mass value="0.000110343960618183" />
+        <inertia ixx="5.35540734738421E-10" ixy="2.72556779627456E-15" ixz="-2.39067108113678E-13" iyy="6.68288834173598E-10" iyz="-3.61159619464986E-15" izz="5.67832018123353E-10" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/left_gripper_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/left_gripper_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="${prefix}left_gripper_joint" type="prismatic">
+      <origin xyz="-0.0044172 -0.0017529 0.0065639" rpy="1.5708 0 0" />
+      <parent link="${prefix}gripper_head" />
+      <child link="${prefix}left_gripper_link" />
+      <axis xyz="1 0 0" />
+      <limit lower="-0.0033" upper="0" effort="0" velocity="0" />
+    </joint>
+    
+    <link name="right_gripper_link">
+      <inertial>
+        <origin xyz="0.0116249302786494 -0.000222760534768027 0.0106733481729336" rpy="0 0 0" />
+        <mass value="0.000110343960618183" />
+        <inertia ixx="5.35540734738421E-10" ixy="2.72556779624708E-15" ixz="2.39067108113796E-13" iyy="6.68288834173598E-10" iyz="3.61159619452802E-15" izz="5.67832018123353E-10" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/right_gripper_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://kuka_kr16_support/meshes/kr16_2/gripper_meshes/right_gripper_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${prefix}right_gripper_joint" type="prismatic">
+      <origin xyz="-0.0033172 -0.0017529 0.0065639" rpy="1.5708 0 0" />
+      <parent link="${prefix}gripper_head" />
+      <child link="${prefix}right_gripper_link" />
+      <axis xyz="1 0 0" />
+      <limit lower="-0.0033" upper="0" effort="0" velocity="0" />
+    </joint>
+    <!--Gripper END -->  
+  
+
+
+    <!-- JOINTS -->
+    <!-- joint 1 (A1) -->
+    <joint name="${prefix}joint_a1" type="revolute">
+      <origin xyz="0 0 0.675" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <axis xyz="0 0 -1"/>
+      <limit effort="0" lower="${radians(-185)}" upper="${radians(185)}" velocity="${radians(156)}"/>
+    </joint>
+    <!-- joint 2 (A2) -->
+    <joint name="${prefix}joint_a2" type="revolute">
+      <origin xyz="0.26 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${radians(-155)}" upper="${radians(35)}" velocity="${radians(156)}"/>
+    </joint>
+    <!-- joint 3 (A3) -->
+    <joint name="${prefix}joint_a3" type="revolute">
+      <origin xyz="0.68 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${radians(-130)}" upper="${radians(154)}" velocity="${radians(156)}"/>
+    </joint>
+    <!-- joint 4 (A4) -->
+    <joint name="${prefix}joint_a4" type="revolute">
+      <origin xyz="0.67 0 -0.035" rpy="0 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <axis xyz="-1 0 0"/>
+      <limit effort="0" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(330)}"/>
+    </joint>
+    <!-- joint 5 (A5) -->
+    <joint name="${prefix}joint_a5" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${radians(-130)}" upper="${radians(130)}" velocity="${radians(330)}"/>
+    </joint>
+    <!-- joint 6 (A6) -->
+    <joint name="${prefix}joint_a6" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <axis xyz="-1 0 0"/>
+      <limit effort="0" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(615)}"/>
+    </joint>
+    <!-- tool frame - fixed frame -->
+    <joint name="${prefix}joint_a6-end_" type="fixed">
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}flange"/>
+      <origin xyz="0.158 0 0" rpy="0 0 0"/>
+    </joint>
+    
+    <joint name="${prefix}end_effetor" type="fixed">
+      <parent link="${prefix}flange"/>
+      <child link="${prefix}gripper_head"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    <!-- END JOINTS -->
+
+    <!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}world" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}world"/>
+    </joint>
+  </xacro:macro>
+</robot>
